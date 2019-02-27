@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IosProficiencyExercise/Utility/Network/NetworkClass.swift"
-            timestampString = "572980952.089077"
+            timestampString = "572988882.183614"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "IosProficiencyExercise/View/HomeTableViewCell.swift"
-            timestampString = "572980952.089197"
+            timestampString = "572988882.183694"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "buildLabels()"
             landmarkType = "7">
          </BreakpointContent>

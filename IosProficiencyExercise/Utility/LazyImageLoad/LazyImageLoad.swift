@@ -26,7 +26,7 @@ public class LazyImageLoad: NSObject
         }
         else
         {
-            var completeURL = url
+            let completeURL = url
         
             let pathURL  = getURLFromString(url: completeURL!)
             if(pathURL == nil)
@@ -49,7 +49,7 @@ public class LazyImageLoad: NSObject
         }
         else
         {
-            var completeURL = url
+            let completeURL = url
            
             let pathURL  = getURLFromString(url: completeURL!)
             if(pathURL == nil)
@@ -74,7 +74,7 @@ public class LazyImageLoad: NSObject
         }
         if defaultImage != nil
         {
-            var completeURL = url
+            let completeURL = url
             
             let image = UIImage(named: defaultImage!)
             let pathURL  = getURLFromString(url: completeURL!)

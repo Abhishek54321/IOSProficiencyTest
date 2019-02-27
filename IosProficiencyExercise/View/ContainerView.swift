@@ -28,8 +28,9 @@ class ContainerView: UIView  {
         PViewUtils.anchorView(table, top: 0, right: 0.0, bottom: 0, left: 0.0, in: self)
     
         table?.dataSource = self
-        table?.rowHeight = 95.0
-        table?.separatorStyle = .none
+        table?.rowHeight = 130.0
+        table?.separatorStyle = .singleLine
+    
         //table?.tableHeaderView = getHeader()
         table?.allowsSelection = false
         addSubview(table!)
@@ -39,14 +40,14 @@ class ContainerView: UIView  {
     func getModelData(dataModel:DataModel){
         self.dataModel = dataModel
         table?.reloadData()
-        print("datamodel in tabelView\(self.dataModel )")
+      
     }
 
 }
 
  extension ContainerView:UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       /*
+       
         let cellIdentifier: String = "HomeTableViewCell"
         var cell: HomeTableViewCell? = (tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? HomeTableViewCell)
         if cell == nil {
@@ -59,8 +60,9 @@ class ContainerView: UIView  {
             if let description =  item.description{
                cell?.descLabel?.text = description
             }
+           // cell?.setItem(titleTxt: (item.title)!,descTxt: (item.description)!)
         }
-        */
+ /*
         
         let cell1 = UITableViewCell()
         if let item:TableRowsDesc = self.dataModel?.rows![indexPath.row] {
@@ -69,9 +71,16 @@ class ContainerView: UIView  {
             }
             if let description =  item.description{
               cell1.detailTextLabel?.text = description
+                
             }
-            cell1.imageView?.image = UIImage(named: "download")
+            //cell1.imageView?.image = UIImage(named: "download")
+            if let imageUrl = item.imageHref{
+                LazyImageLoad.setImageOnImageViewFromURL(imageView: cell1.imageView!, url: imageUrl)
+            }
+            
+            
         }
+ */
         //cell1.textLabel?.text =
     // let item: TableRowsDesc? = (self.dataModel[Int(indexPath.row)] as? TableRowsDesc)
 //        cell?.title?.text = item?.title
@@ -80,14 +89,20 @@ class ContainerView: UIView  {
       // cell?.selectionStyle = UITableViewCellSelectionStyle.none
 //        cell?.link = (item?.link)!
        // cell?.tag = indexPath.row
-        return cell1
+        return cell!
         
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        if let count = self.dataModel?.rows?.count{
+            return count
+        }else{
+            return 1
+        }
+        
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+    
     
 }
