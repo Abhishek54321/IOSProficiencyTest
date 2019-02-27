@@ -8,9 +8,10 @@
 
 import UIKit
 
-class HomeTableView: UIView, UITableViewDataSource, UITableViewDelegate  {
+class ContainerView: UIView  {
     
-  var table: UITableView?
+  fileprivate var table: UITableView?
+    
     init(frame: CGRect, menuResourceId: String) {
           super.init(frame: frame)
         buildTable()
@@ -19,10 +20,11 @@ class HomeTableView: UIView, UITableViewDataSource, UITableViewDelegate  {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    func buildTable() {
+    
+  fileprivate func buildTable() {
         table = UITableView(frame: CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(frame.size.width), height: CGFloat(frame.size.height)), style: .plain)
         PViewUtils.anchorView(table, top: 0, right: 0.0, bottom: 0, left: 0.0, in: self)
-        table?.delegate = self
+
         table?.dataSource = self
         table?.rowHeight = 95.0
         table?.separatorStyle = .none
@@ -31,6 +33,11 @@ class HomeTableView: UIView, UITableViewDataSource, UITableViewDelegate  {
         addSubview(table!)
         table?.backgroundColor = UIColor.clear
     }
+
+
+}
+
+ extension ContainerView:UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let CellIdentifier: String = "HomeTableViewCell"
@@ -47,5 +54,5 @@ class HomeTableView: UIView, UITableViewDataSource, UITableViewDelegate  {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
 }
