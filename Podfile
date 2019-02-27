@@ -1,6 +1,6 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
-
+ source 'https://github.com/CocoaPods/Specs.git'
 target 'IosProficiencyExercise' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
@@ -8,5 +8,5 @@ target 'IosProficiencyExercise' do
   # Pods for IosProficiencyExercise
 
   #pod 'SDWebImage'
-
+  pod 'Alamofire', '~> 4.8.0'
 end

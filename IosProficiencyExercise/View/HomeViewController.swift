@@ -13,9 +13,11 @@ class HomeViewController: UIViewController {
     var table: ContainerView?
     var resourcemenuID:String = ""
     var resourceTitle:String = ""
+    var dataModel:DataModel? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.getAppDataFromServer()
         self.buildTable()
         self.setupHeaderAndTitleLabel()
       
@@ -32,5 +34,14 @@ class HomeViewController: UIViewController {
         self.title = "Hello Nav"
     }
 
+    func getAppDataFromServer(){
+        let urls = prodURL
+        HomeViewModel.getAppList(urls){ (data,error)  in
+            if data != nil {
+              self.dataModel = data
+            }
+            
+        }
+    }
 }
 

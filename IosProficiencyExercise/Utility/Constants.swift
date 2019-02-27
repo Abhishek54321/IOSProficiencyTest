@@ -10,3 +10,6 @@ import UIKit
 
 let prodURL = "https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json"
 
+let testURL = "https://www.dropbox.com/s/wusibuw2tec762u/facts.json?dl=0"
+let SUCESS = 200
+

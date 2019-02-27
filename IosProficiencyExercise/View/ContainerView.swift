@@ -45,7 +45,7 @@ class ContainerView: UIView  {
         if cell == nil {
             cell = HomeTableViewCell(style: .default, reuseIdentifier: CellIdentifier)
         }
-        return UITableViewCell()
+        return cell!
         
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

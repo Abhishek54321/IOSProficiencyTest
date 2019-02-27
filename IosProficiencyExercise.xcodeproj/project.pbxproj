@@ -14,10 +14,12 @@
 		1223F6362225893A00BB3E25 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223F6352225893A00BB3E25 /* HomeViewModel.swift */; };
 		1223F6382225899600BB3E25 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223F6372225899600BB3E25 /* DataModel.swift */; };
 		1223F63E22258F4000BB3E25 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223F63D22258F4000BB3E25 /* HomeTableViewCell.swift */; };
-		1223F644222591C700BB3E25 /* HomeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223F643222591C700BB3E25 /* HomeTableView.swift */; };
 		1223F64E222599E000BB3E25 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223F64D222599E000BB3E25 /* Constants.swift */; };
 		1223F65122259AD500BB3E25 /* NetworkClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223F65022259AD500BB3E25 /* NetworkClass.swift */; };
 		1223F6E422264F7F00BB3E25 /* PViewUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1223F6E322264F7F00BB3E25 /* PViewUtils.m */; };
+		1223F6E822265E1900BB3E25 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223F6E722265E1900BB3E25 /* ContainerView.swift */; };
+		1223F6EF2226A6F900BB3E25 /* facts.json in Resources */ = {isa = PBXBuildFile; fileRef = 1223F6EE2226A6F800BB3E25 /* facts.json */; };
+		7257E6F8DABDEE3649613A95 /* Pods_IosProficiencyExercise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0F321EF37374A8D5C79A499 /* Pods_IosProficiencyExercise.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,12 +32,13 @@
 		1223F6352225893A00BB3E25 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		1223F6372225899600BB3E25 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		1223F63D22258F4000BB3E25 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
-		1223F643222591C700BB3E25 /* HomeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableView.swift; sourceTree = "<group>"; };
 		1223F64D222599E000BB3E25 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1223F65022259AD500BB3E25 /* NetworkClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClass.swift; sourceTree = "<group>"; };
 		1223F6592225AFB300BB3E25 /* IosProficiencyExercise-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IosProficiencyExercise-Bridging-Header.h"; sourceTree = "<group>"; };
 		1223F6C22225B5BF00BB3E25 /* PViewUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PViewUtils.h; sourceTree = "<group>"; };
 		1223F6E322264F7F00BB3E25 /* PViewUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PViewUtils.m; sourceTree = "<group>"; };
+		1223F6E722265E1900BB3E25 /* ContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
+		1223F6EE2226A6F800BB3E25 /* facts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = facts.json; sourceTree = "<group>"; };
 		6CFE7CA0F724C2C6D06CD8D2 /* Pods-IosProficiencyExercise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosProficiencyExercise.release.xcconfig"; path = "Pods/Target Support Files/Pods-IosProficiencyExercise/Pods-IosProficiencyExercise.release.xcconfig"; sourceTree = "<group>"; };
 		783A3E3FF7B5E83610FB9623 /* Pods-IosProficiencyExercise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosProficiencyExercise.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IosProficiencyExercise/Pods-IosProficiencyExercise.debug.xcconfig"; sourceTree = "<group>"; };
 		C0F321EF37374A8D5C79A499 /* Pods_IosProficiencyExercise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IosProficiencyExercise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7257E6F8DABDEE3649613A95 /* Pods_IosProficiencyExercise.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +77,7 @@
 		1223F61F222584D300BB3E25 /* IosProficiencyExercise */ = {
 			isa = PBXGroup;
 			children = (
+				1223F6EE2226A6F800BB3E25 /* facts.json */,
 				1223F6342225855100BB3E25 /* ViewModel */,
 				1223F6332225854800BB3E25 /* View */,
 				1223F6322225853C00BB3E25 /* Model */,
@@ -96,9 +101,9 @@
 		1223F6332225854800BB3E25 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1223F6E722265E1900BB3E25 /* ContainerView.swift */,
 				1223F622222584D300BB3E25 /* HomeViewController.swift */,
 				1223F63D22258F4000BB3E25 /* HomeTableViewCell.swift */,
-				1223F643222591C700BB3E25 /* HomeTableView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -167,6 +172,7 @@
 				1223F619222584D300BB3E25 /* Sources */,
 				1223F61A222584D300BB3E25 /* Frameworks */,
 				1223F61B222584D300BB3E25 /* Resources */,
+				2C3AD429F2E63BABA3C24D00 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -217,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1223F62B222584D400BB3E25 /* LaunchScreen.storyboard in Resources */,
+				1223F6EF2226A6F900BB3E25 /* facts.json in Resources */,
 				1223F628222584D400BB3E25 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,6 +249,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		2C3AD429F2E63BABA3C24D00 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-IosProficiencyExercise/Pods-IosProficiencyExercise-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IosProficiencyExercise/Pods-IosProficiencyExercise-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -250,8 +275,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1223F6E422264F7F00BB3E25 /* PViewUtils.m in Sources */,
-				1223F644222591C700BB3E25 /* HomeTableView.swift in Sources */,
 				1223F6382225899600BB3E25 /* DataModel.swift in Sources */,
+				1223F6E822265E1900BB3E25 /* ContainerView.swift in Sources */,
 				1223F63E22258F4000BB3E25 /* HomeTableViewCell.swift in Sources */,
 				1223F623222584D300BB3E25 /* HomeViewController.swift in Sources */,
 				1223F64E222599E000BB3E25 /* Constants.swift in Sources */,
@@ -407,7 +432,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "$(inherited)";
 				"OTHER_LDFLAGS[arch=*]" = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mindtree.iOSProficiencyTest.IosProficiencyExercise;
@@ -417,7 +442,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "arm64 armv7";
+				VALID_ARCHS = "arm64 armv7 armv7s arm64e";
 			};
 			name = Debug;
 		};
@@ -443,7 +468,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "IosProficiencyExercise/IosProficiencyExercise-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALID_ARCHS = "arm64 armv7";
+				VALID_ARCHS = "arm64 armv7 armv7s arm64e";
 			};
 			name = Release;
 		};

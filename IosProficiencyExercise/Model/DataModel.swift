@@ -9,12 +9,23 @@
 import UIKit
 
 struct DataModel:Codable {
-    var navbarTitle:String
-    var tableRows = [TableRowsDesc]()
+    var title:String?
+    var rows:[TableRowsDesc]?
+    
+    enum CodingKeys :String,CodingKey{
+        case title = "title"
+        case rows = "rows"
+    }
 }
 
-struct TableRowsDesc:Codable {
-    var cellTitle:String
-    var  cellDescription:String
-    var  cellImageRefernce:String
+struct TableRowsDesc : Codable {
+    var title:String?
+    var  description:String?
+    var  imageHref:String?
+    
+    enum CodingKeys : String,CodingKey{
+        case title = "title"
+        case description = "description"
+        case imageHref = "imageHref"
+    }
 }

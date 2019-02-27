@@ -7,47 +7,39 @@
 //
 
 import UIKit
+import Alamofire
 
+let AUTHORIZATION_EXPIRY_CODE = 401
+let NETWORK_AVIALABLE_CODE = 100
 class NetworkClass: NSObject {
     
-    class func SiteCoreGetRequest(strUrl:String,param:String,success:@escaping(Any)->Void,failure:@escaping(Error)->Void){
-    
-        let url = URL(string: strUrl)
-        let request = URLRequest(url: url!)
-        let dataTask = URLSession.shared.dataTask(with: request) { (data, response, error) in
+    class func fetchAppList(strUrl:String,success:@escaping(Any)->Void,failure:@escaping(Error)->Void) {
+        URLSession.shared.dataTask(with: URL(string: strUrl)!) { (data, res, err) in
             
-             guard let reponseData = data else{
-             return
-             }
-             
-             let decoder = JSONDecoder()
-             
-             do {
-             decoder.keyDecodingStrategy = .convertFromSnakeCase
-             let loginModelObject =  try decoder.decode( DataModel.self, from: reponseData)
-             }catch{
-             
-             }
-            
-            /*
-             do{
-             //For
-             guard let data = try JSONSerialization.jsonObject(with: reponseData, options: []) as? [String:Any]else{
-             return
-             }
-             // Codable
-             let decoder = JSONDecoder()
-             decoder.keyDecodingStrategy = .convertFromSnakeCase
-             decoder.decode([LoginViewModel.self()], from: reponseData)
-             
-             
-             }catch{
-             
-             
-             }
-             */
-        }
-        dataTask.resume()
-    }
+            if let facts = data {
+                if let value = String(data: facts, encoding: String.Encoding.ascii) {
+                    
+                    if let jsonData = value.data(using: String.Encoding.utf8) {
+                        do {
+                            
+                            let decoder = JSONDecoder()
+                            let dataModel = try decoder.decode(DataModel.self, from: jsonData)
+                         
+                            success(dataModel)
 
-}
+                            
+                        } catch {
+                            NSLog("ERROR \(error.localizedDescription)")
+                        }
+                    }
+                }
+                
+            }
+            }.resume()
+        
+    }
+    }
+    
+
+
+

@@ -10,4 +10,18 @@ import UIKit
 
 class HomeViewModel: NSObject {
     
+    class func getAppList(_ url:String,completion:@escaping(_ data:DataModel?,_ errcode:Int)->Void){
+        
+        NetworkClass.fetchAppList(strUrl:url, success: { data in
+            
+           
+            let  dataModel:DataModel = data as! DataModel
+            completion(dataModel, SUCESS)
+            
+            
+        },failure:{ error in
+            
+        } )
+    }
+    
 }
