@@ -19,6 +19,9 @@
 		1223F6E422264F7F00BB3E25 /* PViewUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1223F6E322264F7F00BB3E25 /* PViewUtils.m */; };
 		1223F6E822265E1900BB3E25 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223F6E722265E1900BB3E25 /* ContainerView.swift */; };
 		1223F6EF2226A6F900BB3E25 /* facts.json in Resources */ = {isa = PBXBuildFile; fileRef = 1223F6EE2226A6F800BB3E25 /* facts.json */; };
+		1223F6F82226D03200BB3E25 /* MultilineLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1223F6F62226D03200BB3E25 /* MultilineLabel.m */; };
+		1223F6FB2226D06F00BB3E25 /* FontFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1223F6FA2226D06F00BB3E25 /* FontFactory.m */; };
+		1223F7052227004000BB3E25 /* LazyImageLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223F7042227004000BB3E25 /* LazyImageLoad.swift */; };
 		7257E6F8DABDEE3649613A95 /* Pods_IosProficiencyExercise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0F321EF37374A8D5C79A499 /* Pods_IosProficiencyExercise.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +42,11 @@
 		1223F6E322264F7F00BB3E25 /* PViewUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PViewUtils.m; sourceTree = "<group>"; };
 		1223F6E722265E1900BB3E25 /* ContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		1223F6EE2226A6F800BB3E25 /* facts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = facts.json; sourceTree = "<group>"; };
+		1223F6F62226D03200BB3E25 /* MultilineLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultilineLabel.m; sourceTree = "<group>"; };
+		1223F6F72226D03200BB3E25 /* MultilineLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultilineLabel.h; sourceTree = "<group>"; };
+		1223F6F92226D06F00BB3E25 /* FontFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontFactory.h; sourceTree = "<group>"; };
+		1223F6FA2226D06F00BB3E25 /* FontFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontFactory.m; sourceTree = "<group>"; };
+		1223F7042227004000BB3E25 /* LazyImageLoad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyImageLoad.swift; sourceTree = "<group>"; };
 		6CFE7CA0F724C2C6D06CD8D2 /* Pods-IosProficiencyExercise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosProficiencyExercise.release.xcconfig"; path = "Pods/Target Support Files/Pods-IosProficiencyExercise/Pods-IosProficiencyExercise.release.xcconfig"; sourceTree = "<group>"; };
 		783A3E3FF7B5E83610FB9623 /* Pods-IosProficiencyExercise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosProficiencyExercise.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IosProficiencyExercise/Pods-IosProficiencyExercise.debug.xcconfig"; sourceTree = "<group>"; };
 		C0F321EF37374A8D5C79A499 /* Pods_IosProficiencyExercise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IosProficiencyExercise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +90,7 @@
 				1223F6332225854800BB3E25 /* View */,
 				1223F6322225853C00BB3E25 /* Model */,
 				1223F620222584D300BB3E25 /* AppDelegate.swift */,
+				1223F627222584D400BB3E25 /* Assets.xcassets */,
 				1223F64F222599FF00BB3E25 /* Utility */,
 				1223F629222584D400BB3E25 /* LaunchScreen.storyboard */,
 				1223F6592225AFB300BB3E25 /* IosProficiencyExercise-Bridging-Header.h */,
@@ -119,6 +128,8 @@
 		1223F64F222599FF00BB3E25 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				1223F7032227001E00BB3E25 /* LazyImageLoad */,
+				1223F6FC2226DF6500BB3E25 /* Common */,
 				1223F6B52225B5BF00BB3E25 /* ObjectiveCFile */,
 				1223F6522225A91100BB3E25 /* Network */,
 				1223F64D222599E000BB3E25 /* Constants.swift */,
@@ -130,7 +141,6 @@
 			isa = PBXGroup;
 			children = (
 				1223F65022259AD500BB3E25 /* NetworkClass.swift */,
-				1223F627222584D400BB3E25 /* Assets.xcassets */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -138,10 +148,29 @@
 		1223F6B52225B5BF00BB3E25 /* ObjectiveCFile */ = {
 			isa = PBXGroup;
 			children = (
+				1223F6F92226D06F00BB3E25 /* FontFactory.h */,
+				1223F6FA2226D06F00BB3E25 /* FontFactory.m */,
+				1223F6F72226D03200BB3E25 /* MultilineLabel.h */,
+				1223F6F62226D03200BB3E25 /* MultilineLabel.m */,
 				1223F6E322264F7F00BB3E25 /* PViewUtils.m */,
 				1223F6C22225B5BF00BB3E25 /* PViewUtils.h */,
 			);
 			path = ObjectiveCFile;
+			sourceTree = "<group>";
+		};
+		1223F6FC2226DF6500BB3E25 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		1223F7032227001E00BB3E25 /* LazyImageLoad */ = {
+			isa = PBXGroup;
+			children = (
+				1223F7042227004000BB3E25 /* LazyImageLoad.swift */,
+			);
+			path = LazyImageLoad;
 			sourceTree = "<group>";
 		};
 		4479835B80DC8F8321B0111F /* Frameworks */ = {
@@ -257,10 +286,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-IosProficiencyExercise/Pods-IosProficiencyExercise-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -275,9 +306,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1223F6E422264F7F00BB3E25 /* PViewUtils.m in Sources */,
+				1223F6FB2226D06F00BB3E25 /* FontFactory.m in Sources */,
 				1223F6382225899600BB3E25 /* DataModel.swift in Sources */,
 				1223F6E822265E1900BB3E25 /* ContainerView.swift in Sources */,
 				1223F63E22258F4000BB3E25 /* HomeTableViewCell.swift in Sources */,
+				1223F7052227004000BB3E25 /* LazyImageLoad.swift in Sources */,
+				1223F6F82226D03200BB3E25 /* MultilineLabel.m in Sources */,
 				1223F623222584D300BB3E25 /* HomeViewController.swift in Sources */,
 				1223F64E222599E000BB3E25 /* Constants.swift in Sources */,
 				1223F65122259AD500BB3E25 /* NetworkClass.swift in Sources */,
