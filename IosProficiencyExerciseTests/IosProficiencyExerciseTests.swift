@@ -11,21 +11,33 @@ import XCTest
 class IosProficiencyExerciseTests: XCTestCase {
     var title :String?
     var homeViewModel:HomeViewModel?
+    var datamodel:DataModel?
     
     override func setUp() {
         super.setUp()
-
-        title = "About Canada"
-     
+            datamodel = DataModel()
+       // title = "About Canada"
+        
+        
     }
-
+    
     override func tearDown() {
         homeViewModel = nil
+        datamodel = nil
         super.tearDown()
-       
+        
     }
-
-
+    
+    func testData(){
+        let expectation = XCTestExpectation(description: "Get data from server")
+        HomeViewModel.getAppList("https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json", completion: {(data,sucess)
+            in
+            expectation.fulfill()
+        })
+        wait(for: [expectation], timeout: 10.0)
+    }
+    
+    
     func testServerData(){
         // Create an expectation for a background download task.
         let expectation = XCTestExpectation(description: "Get data from server")
@@ -49,21 +61,27 @@ class IosProficiencyExerciseTests: XCTestCase {
         dataTask.resume()
         
     }
-    
-    func testNavBarTitle(){
-        XCTAssertEqual(title, "About Canada")
-    }
-    
-    
-    func test_fetch_details(){
-      //  let homeModel = self.homeViewModel!
-//        let url = URL(string: "https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json")
-//        let result = XCTestExpectation(description: "call")
-//        HomeViewModel.getAppList(url) { (data, 200) in
-//            data.
-//        }
-       
+    func testNetwork(){
+        let bool = NWReachability.connectedToNetwork()
+        XCTAssertTrue(bool, "Suceess")
         
     }
-
+    func testNavBarTitle(){
+     
+        if let title = datamodel!.title{
+             XCTAssertEqual(title, "About Canada")
+        }
+       
+    }
+    func testNumbersOfRow(){
+        
+        guard let tableRows = datamodel!.rows, let count = tableRows.count as? Int else{
+           return
+        }
+       
+        XCTAssertEqual(count, 14)
+    }
+    
+   
+    
 }
