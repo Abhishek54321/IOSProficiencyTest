@@ -22,8 +22,19 @@
 		1223F6F82226D03200BB3E25 /* MultilineLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1223F6F62226D03200BB3E25 /* MultilineLabel.m */; };
 		1223F6FB2226D06F00BB3E25 /* FontFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1223F6FA2226D06F00BB3E25 /* FontFactory.m */; };
 		1223F7052227004000BB3E25 /* LazyImageLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223F7042227004000BB3E25 /* LazyImageLoad.swift */; };
+		1223F70F2227211200BB3E25 /* IosProficiencyExerciseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223F70E2227211200BB3E25 /* IosProficiencyExerciseTests.swift */; };
 		7257E6F8DABDEE3649613A95 /* Pods_IosProficiencyExercise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0F321EF37374A8D5C79A499 /* Pods_IosProficiencyExercise.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1223F7112227211200BB3E25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1223F615222584D300BB3E25 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1223F61C222584D300BB3E25;
+			remoteInfo = IosProficiencyExercise;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1223F61D222584D300BB3E25 /* IosProficiencyExercise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IosProficiencyExercise.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +58,9 @@
 		1223F6F92226D06F00BB3E25 /* FontFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontFactory.h; sourceTree = "<group>"; };
 		1223F6FA2226D06F00BB3E25 /* FontFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontFactory.m; sourceTree = "<group>"; };
 		1223F7042227004000BB3E25 /* LazyImageLoad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyImageLoad.swift; sourceTree = "<group>"; };
+		1223F70C2227211200BB3E25 /* IosProficiencyExerciseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IosProficiencyExerciseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1223F70E2227211200BB3E25 /* IosProficiencyExerciseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosProficiencyExerciseTests.swift; sourceTree = "<group>"; };
+		1223F7102227211200BB3E25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6CFE7CA0F724C2C6D06CD8D2 /* Pods-IosProficiencyExercise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosProficiencyExercise.release.xcconfig"; path = "Pods/Target Support Files/Pods-IosProficiencyExercise/Pods-IosProficiencyExercise.release.xcconfig"; sourceTree = "<group>"; };
 		783A3E3FF7B5E83610FB9623 /* Pods-IosProficiencyExercise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosProficiencyExercise.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IosProficiencyExercise/Pods-IosProficiencyExercise.debug.xcconfig"; sourceTree = "<group>"; };
 		C0F321EF37374A8D5C79A499 /* Pods_IosProficiencyExercise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IosProficiencyExercise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +75,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1223F7092227211200BB3E25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -68,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				1223F61F222584D300BB3E25 /* IosProficiencyExercise */,
+				1223F70D2227211200BB3E25 /* IosProficiencyExerciseTests */,
 				1223F61E222584D300BB3E25 /* Products */,
 				65C5EF83EA0D6B955412D185 /* Pods */,
 				4479835B80DC8F8321B0111F /* Frameworks */,
@@ -78,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				1223F61D222584D300BB3E25 /* IosProficiencyExercise.app */,
+				1223F70C2227211200BB3E25 /* IosProficiencyExerciseTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -173,6 +196,15 @@
 			path = LazyImageLoad;
 			sourceTree = "<group>";
 		};
+		1223F70D2227211200BB3E25 /* IosProficiencyExerciseTests */ = {
+			isa = PBXGroup;
+			children = (
+				1223F70E2227211200BB3E25 /* IosProficiencyExerciseTests.swift */,
+				1223F7102227211200BB3E25 /* Info.plist */,
+			);
+			path = IosProficiencyExerciseTests;
+			sourceTree = "<group>";
+		};
 		4479835B80DC8F8321B0111F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +244,24 @@
 			productReference = 1223F61D222584D300BB3E25 /* IosProficiencyExercise.app */;
 			productType = "com.apple.product-type.application";
 		};
+		1223F70B2227211200BB3E25 /* IosProficiencyExerciseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1223F7132227211300BB3E25 /* Build configuration list for PBXNativeTarget "IosProficiencyExerciseTests" */;
+			buildPhases = (
+				1223F7082227211200BB3E25 /* Sources */,
+				1223F7092227211200BB3E25 /* Frameworks */,
+				1223F70A2227211200BB3E25 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1223F7122227211200BB3E25 /* PBXTargetDependency */,
+			);
+			name = IosProficiencyExerciseTests;
+			productName = IosProficiencyExerciseTests;
+			productReference = 1223F70C2227211200BB3E25 /* IosProficiencyExerciseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -225,6 +275,10 @@
 					1223F61C222584D300BB3E25 = {
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1010;
+					};
+					1223F70B2227211200BB3E25 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 1223F61C222584D300BB3E25;
 					};
 				};
 			};
@@ -242,6 +296,7 @@
 			projectRoot = "";
 			targets = (
 				1223F61C222584D300BB3E25 /* IosProficiencyExercise */,
+				1223F70B2227211200BB3E25 /* IosProficiencyExerciseTests */,
 			);
 		};
 /* End PBXProject section */
@@ -254,6 +309,13 @@
 				1223F62B222584D400BB3E25 /* LaunchScreen.storyboard in Resources */,
 				1223F6EF2226A6F900BB3E25 /* facts.json in Resources */,
 				1223F628222584D400BB3E25 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1223F70A2227211200BB3E25 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,7 +382,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1223F7082227211200BB3E25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1223F70F2227211200BB3E25 /* IosProficiencyExerciseTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1223F7122227211200BB3E25 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1223F61C222584D300BB3E25 /* IosProficiencyExercise */;
+			targetProxy = 1223F7112227211200BB3E25 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1223F629222584D400BB3E25 /* LaunchScreen.storyboard */ = {
@@ -506,6 +584,44 @@
 			};
 			name = Release;
 		};
+		1223F7142227211300BB3E25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = IosProficiencyExerciseTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mindtree.iOSProficiencyTest.IosProficiencyExerciseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IosProficiencyExercise.app/IosProficiencyExercise";
+			};
+			name = Debug;
+		};
+		1223F7152227211300BB3E25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = IosProficiencyExerciseTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mindtree.iOSProficiencyTest.IosProficiencyExerciseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IosProficiencyExercise.app/IosProficiencyExercise";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -523,6 +639,15 @@
 			buildConfigurations = (
 				1223F630222584D400BB3E25 /* Debug */,
 				1223F631222584D400BB3E25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1223F7132227211300BB3E25 /* Build configuration list for PBXNativeTarget "IosProficiencyExerciseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1223F7142227211300BB3E25 /* Debug */,
+				1223F7152227211300BB3E25 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

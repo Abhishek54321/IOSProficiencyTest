@@ -58,7 +58,7 @@ public class LazyImageLoad: NSObject
             }
             
             
-            imageView.sd_setIndicatorStyle(UIActivityIndicatorView.Style.white)
+            imageView.sd_setIndicatorStyle(UIActivityIndicatorView.Style.gray)
             imageView.sd_setShowActivityIndicatorView(true)
             imageView.sd_setImage(with: pathURL!, completed: { (image, error, type, url) in
                 response(image)
