@@ -15,3 +15,9 @@ let SUCESS = 200
 
 let kMarginFlexible = PViewUtils.getFlexibleMargin()
 
+let timeoutValueForWiFi = 30.0
+let timeoutValueFor2G = 180.0
+let timeoutValueFor3G = 120.0
+let timeoutValueFor4G = 60.0
+let defaultTimeoutValue = 30.0
+
