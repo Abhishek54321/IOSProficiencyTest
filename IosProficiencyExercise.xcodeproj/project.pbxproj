@@ -18,7 +18,6 @@
 		1223F65122259AD500BB3E25 /* NetworkClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223F65022259AD500BB3E25 /* NetworkClass.swift */; };
 		1223F6E422264F7F00BB3E25 /* PViewUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1223F6E322264F7F00BB3E25 /* PViewUtils.m */; };
 		1223F6E822265E1900BB3E25 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223F6E722265E1900BB3E25 /* ContainerView.swift */; };
-		1223F6EF2226A6F900BB3E25 /* facts.json in Resources */ = {isa = PBXBuildFile; fileRef = 1223F6EE2226A6F800BB3E25 /* facts.json */; };
 		1223F6F82226D03200BB3E25 /* MultilineLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1223F6F62226D03200BB3E25 /* MultilineLabel.m */; };
 		1223F6FB2226D06F00BB3E25 /* FontFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1223F6FA2226D06F00BB3E25 /* FontFactory.m */; };
 		1223F7052227004000BB3E25 /* LazyImageLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223F7042227004000BB3E25 /* LazyImageLoad.swift */; };
@@ -55,7 +54,6 @@
 		1223F6C22225B5BF00BB3E25 /* PViewUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PViewUtils.h; sourceTree = "<group>"; };
 		1223F6E322264F7F00BB3E25 /* PViewUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PViewUtils.m; sourceTree = "<group>"; };
 		1223F6E722265E1900BB3E25 /* ContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
-		1223F6EE2226A6F800BB3E25 /* facts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = facts.json; sourceTree = "<group>"; };
 		1223F6F62226D03200BB3E25 /* MultilineLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultilineLabel.m; sourceTree = "<group>"; };
 		1223F6F72226D03200BB3E25 /* MultilineLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultilineLabel.h; sourceTree = "<group>"; };
 		1223F6F92226D06F00BB3E25 /* FontFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontFactory.h; sourceTree = "<group>"; };
@@ -114,7 +112,6 @@
 		1223F61F222584D300BB3E25 /* IosProficiencyExercise */ = {
 			isa = PBXGroup;
 			children = (
-				1223F6EE2226A6F800BB3E25 /* facts.json */,
 				1223F6342225855100BB3E25 /* ViewModel */,
 				1223F6332225854800BB3E25 /* View */,
 				1223F6322225853C00BB3E25 /* Model */,
@@ -325,7 +322,6 @@
 			files = (
 				1223F62B222584D400BB3E25 /* LaunchScreen.storyboard in Resources */,
 				1223F71B2227CBC100BB3E25 /* Localizable.strings in Resources */,
-				1223F6EF2226A6F900BB3E25 /* facts.json in Resources */,
 				1223F628222584D400BB3E25 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

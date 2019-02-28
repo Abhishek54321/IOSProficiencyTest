@@ -58,6 +58,7 @@ class HomeViewController: UIViewController {
                 //self.showActivityIndicator(false)
                 SVProgressHUD.dismiss()
                 self.dataModel = data
+                //For updating data in main Thread
                 DispatchQueue.main.async {
                     self.setupHeaderAndTitleLabel()
                     self.table!.getModelData(dataModel: self.dataModel!)
