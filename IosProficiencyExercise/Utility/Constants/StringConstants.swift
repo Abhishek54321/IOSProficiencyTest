@@ -13,6 +13,10 @@ let kDownloadData = NSLocalizedString("DOWNLOAD_DATA", comment: "")
 let kCellIdentifier = NSLocalizedString("CELL_IDENTIFER", comment: "")
 let kTTitleUnavialable = NSLocalizedString("TITLE_UNAVIABLE", comment: "")
 let kDescUnavialable = NSLocalizedString("DESC_UNAVIABLE", comment: "")
+let kNoInternet = NSLocalizedString("NO_INTERNET_TITLE", comment: "")
+let kNoInternetMessage = NSLocalizedString("INTERNET_CONNECTION_MESSAGE", comment: "")
+let kOK = NSLocalizedString("OK", comment: "")
+
 
 
 

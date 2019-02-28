@@ -17,13 +17,9 @@ class HomeViewController: UIViewController {
     var resourceTitle:String = ""
     var dataModel:DataModel? = nil
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.showActivityIndicator(true)
-       
-        SVProgressHUD.show(withStatus: kDownloadData)
-        self.getAppDataFromServer()
+       self.getAppDataFromServer()
         self.buildTable()
         self.setupHeaderAndTitleLabel()
         
@@ -31,16 +27,16 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         if NWReachability.connectedToNetwork(){
+              SVProgressHUD.show(withStatus: kDownloadData)
             print("Ineternet is there")
+        }else{
+            self.showNetworkAlert()
         }
     }
     
     func buildTable() {
-        
         table = ContainerView(frame: CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(view.frame.size.width), height: CGFloat(100)), menuResourceId: resourcemenuID )
         table?.delegate = self
-        
-        
         PViewUtils.anchorView(table, top: 0, right: 0, bottom: 0, left: 0, in: view)
         view.addSubview(table!)
     }
@@ -67,17 +63,21 @@ class HomeViewController: UIViewController {
         }
     }
     
-    func showActivityIndicator(_ isShow:Bool){
-        DispatchQueue.main.async {
-            let activityView = UIActivityIndicatorView(style: .whiteLarge)
-            activityView.center = self.view.center
-            if isShow{
-                activityView.startAnimating()
-            }else{
-                activityView.stopAnimating()
-            }
-            self.view.addSubview(activityView)
-        }
+    
+    func showNetworkAlert(){
+        let alert = UIAlertController(title: kNoInternet, message: kNoInternetMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: kOK, style: .cancel, handler: { action in
+            switch action.style{
+            case .default:
+                break
+            case .cancel:
+                self.dismiss(animated: true, completion: nil)
+               
+            case .destructive:
+                 break
+                
+            }}))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
