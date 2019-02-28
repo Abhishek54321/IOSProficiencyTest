@@ -17,6 +17,7 @@ class HomeViewController: UIViewController {
     var resourceTitle:String = ""
     var dataModel:DataModel? = nil
     
+    //MARK: - Viewcontroller LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
        self.getAppDataFromServer()
@@ -33,7 +34,8 @@ class HomeViewController: UIViewController {
             self.showNetworkAlert()
         }
     }
-    
+    //MARK: - Container View
+    //This method is for making Container View
     func buildTable() {
         table = ContainerView(frame: CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(view.frame.size.width), height: CGFloat(100)), menuResourceId: resourcemenuID )
         table?.delegate = self
@@ -47,7 +49,8 @@ class HomeViewController: UIViewController {
         }
         
     }
-    
+    //MARK: - getAppDataFromServer
+    //This method Get data from Server
     func getAppDataFromServer(){
         let urls = prodURL
         HomeViewModel.getAppList(urls){ (data,error)  in
@@ -62,8 +65,8 @@ class HomeViewController: UIViewController {
             }
         }
     }
-    
-    
+    //MARK: - showNetworkAlert
+    //This method show  Alert if network connection is not there
     func showNetworkAlert(){
         let alert = UIAlertController(title: kNoInternet, message: kNoInternetMessage, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: kOK, style: .cancel, handler: { action in
@@ -80,7 +83,8 @@ class HomeViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
 }
-
+//MARK: - RefreshDataProtocol
+//This method take latest data from server
 extension HomeViewController: RefreshDataProtocol {
     func updateDataFromServer() -> Void {
         getAppDataFromServer()

@@ -34,6 +34,23 @@ class HomeTableViewCell: UITableViewCell {
         }
        
     }
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        title?.removeFromSuperview()
+        desc?.removeFromSuperview()
+    
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+    }
+    
+//MARK: - buildCellForIphone
+//Here making cell for iphones
     func buildCellForIphone() {
         //UIScreen.main.bounds.size.width
         let tgWidth: CGFloat = UIScreen.main.bounds.size.width - 120.0
@@ -54,6 +71,8 @@ class HomeTableViewCell: UITableViewCell {
         addSubview(descLabel!)
     }
     
+//MARK: - buildCellForIpad
+//Here making cell for iPad
     func buildCellForIpad() {
         let tgWidth: CGFloat = UIScreen.main.bounds.size.width - 290.0
         cellImageView = UIImageView()
@@ -74,23 +93,11 @@ class HomeTableViewCell: UITableViewCell {
         addSubview(titleLabel!)
         addSubview(descLabel!)
     }
-   override func layoutSubviews() {
-        super.layoutSubviews()
-        title?.removeFromSuperview()
-        desc?.removeFromSuperview()
-    
-        
-    }
+   
     func setItem(titleTxt: String, descTxt:String) {
         titleSt = titleTxt
         descSt = descTxt
     }
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-       
-    }
+   
     
 }

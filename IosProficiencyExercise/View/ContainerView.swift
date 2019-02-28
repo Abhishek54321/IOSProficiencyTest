@@ -15,11 +15,9 @@ protocol RefreshDataProtocol : class {
 class ContainerView: UIView  {
     
     fileprivate var refreshControl = UIRefreshControl()
-    
     fileprivate var table: UITableView?
     var dataModel:DataModel? = nil
     var tableRowsDesc:TableRowsDesc? = nil
-    
     weak var delegate: RefreshDataProtocol? = nil
     
     init(frame: CGRect, menuResourceId: String) {
@@ -30,36 +28,31 @@ class ContainerView: UIView  {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+    //This method is used building table
     fileprivate func buildTable() {
         table = UITableView(frame: CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(frame.size.width), height: CGFloat(frame.size.height)), style: .plain)
         PViewUtils.anchorView(table, top: 0, right: 0.0, bottom: 0, left: 0.0, in: self)
-        
         table?.dataSource = self
         if UIDevice.current.userInterfaceIdiom == .pad{
-           table?.rowHeight = 150.0
+            table?.rowHeight = 150.0
         }else{
-                table?.rowHeight = 140.0
+            table?.rowHeight = 140.0
         }
-    
         table?.separatorStyle = .singleLine
-        
-        //table?.tableHeaderView = getHeader()
         table?.allowsSelection = false
         addSubview(table!)
         table?.backgroundColor = UIColor.clear
-        
         refreshControl.attributedTitle = NSAttributedString(string: kRefreshContent)
         refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: UIControl.Event.valueChanged)
         table?.addSubview(refreshControl)
     }
-    
+    //This method is used for taking Model data
     func getModelData(dataModel:DataModel){
         self.dataModel = dataModel
         table?.reloadData()
         endRefreshControl()
     }
-    
+   // This method is used for taking refresh data
     @objc func refresh(sender:AnyObject) {
         // Code to refresh table view
         if delegate != nil {
@@ -71,7 +64,7 @@ class ContainerView: UIView  {
         refreshControl.endRefreshing()
     }
 }
-
+//MARK: - UITableViewDataSource
 extension ContainerView:UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
