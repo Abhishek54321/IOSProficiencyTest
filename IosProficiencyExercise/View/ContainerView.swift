@@ -8,14 +8,22 @@
 
 import UIKit
 
+protocol RefreshDataProtocol : class {
+    func updateDataFromServer() -> Void
+}
+
 class ContainerView: UIView  {
     
-  fileprivate var table: UITableView?
+    fileprivate var refreshControl = UIRefreshControl()
+    
+    fileprivate var table: UITableView?
     var dataModel:DataModel? = nil
     var tableRowsDesc:TableRowsDesc? = nil
     
+    weak var delegate: RefreshDataProtocol? = nil
+    
     init(frame: CGRect, menuResourceId: String) {
-          super.init(frame: frame)
+        super.init(frame: frame)
         buildTable()
     }
     
@@ -23,31 +31,45 @@ class ContainerView: UIView  {
         fatalError("init(coder:) has not been implemented")
     }
     
-  fileprivate func buildTable() {
+    fileprivate func buildTable() {
         table = UITableView(frame: CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(frame.size.width), height: CGFloat(frame.size.height)), style: .plain)
         PViewUtils.anchorView(table, top: 0, right: 0.0, bottom: 0, left: 0.0, in: self)
-    
+        
         table?.dataSource = self
         table?.rowHeight = 130.0
         table?.separatorStyle = .singleLine
-    
+        
         //table?.tableHeaderView = getHeader()
         table?.allowsSelection = false
         addSubview(table!)
         table?.backgroundColor = UIColor.clear
+        
+        refreshControl.attributedTitle = NSAttributedString(string: kRefreshContent)
+        refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: UIControl.Event.valueChanged)
+        table?.addSubview(refreshControl)
     }
-  
+    
     func getModelData(dataModel:DataModel){
         self.dataModel = dataModel
         table?.reloadData()
-      
+        endRefreshControl()
     }
-
+    
+    @objc func refresh(sender:AnyObject) {
+        // Code to refresh table view
+        if delegate != nil {
+            delegate?.updateDataFromServer()
+        }
+    }
+    
+    func endRefreshControl() -> Void {
+        refreshControl.endRefreshing()
+    }
 }
 
- extension ContainerView:UITableViewDataSource{
+extension ContainerView:UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      
+        
         let cellIdentifier: String = "HomeTableViewCell"
         var cell: HomeTableViewCell? = (tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? HomeTableViewCell)
         if cell == nil {
@@ -62,7 +84,7 @@ class ContainerView: UIView  {
             }
             
             if let description =  item.description{
-               cell?.descLabel?.text = description
+                cell?.descLabel?.text = description
             }  else {
                 cell?.descLabel?.text = "Desc Not Available"
             }
@@ -79,7 +101,7 @@ class ContainerView: UIView  {
                 cell?.cellImageView?.image = UIImage(named: "download")
             }
         }
- 
+        
         return cell!
         
     }
@@ -94,6 +116,4 @@ class ContainerView: UIView  {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
-    
 }

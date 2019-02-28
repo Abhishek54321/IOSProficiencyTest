@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  IosProficiencyExercise
+
+  Created by Abhishek Singh on 28/02/19.
+  Copyright © 2019 Abhishek Singh. All rights reserved.
+*/
+
+"TABLE_CONTENT_REFRESH" = "Refreshing Content";
+"DOWNLOAD_DATA" = "Downloading data...";

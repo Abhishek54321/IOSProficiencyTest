@@ -23,6 +23,9 @@
 		1223F6FB2226D06F00BB3E25 /* FontFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1223F6FA2226D06F00BB3E25 /* FontFactory.m */; };
 		1223F7052227004000BB3E25 /* LazyImageLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223F7042227004000BB3E25 /* LazyImageLoad.swift */; };
 		1223F70F2227211200BB3E25 /* IosProficiencyExerciseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223F70E2227211200BB3E25 /* IosProficiencyExerciseTests.swift */; };
+		1223F7172227C84D00BB3E25 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223F7162227C84D00BB3E25 /* Reachability.swift */; };
+		1223F71B2227CBC100BB3E25 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1223F71D2227CBC100BB3E25 /* Localizable.strings */; };
+		1223F7202227CC9200BB3E25 /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223F71F2227CC9200BB3E25 /* StringConstants.swift */; };
 		7257E6F8DABDEE3649613A95 /* Pods_IosProficiencyExercise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0F321EF37374A8D5C79A499 /* Pods_IosProficiencyExercise.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +64,9 @@
 		1223F70C2227211200BB3E25 /* IosProficiencyExerciseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IosProficiencyExerciseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1223F70E2227211200BB3E25 /* IosProficiencyExerciseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosProficiencyExerciseTests.swift; sourceTree = "<group>"; };
 		1223F7102227211200BB3E25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1223F7162227C84D00BB3E25 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		1223F71C2227CBC100BB3E25 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1223F71F2227CC9200BB3E25 /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
 		6CFE7CA0F724C2C6D06CD8D2 /* Pods-IosProficiencyExercise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosProficiencyExercise.release.xcconfig"; path = "Pods/Target Support Files/Pods-IosProficiencyExercise/Pods-IosProficiencyExercise.release.xcconfig"; sourceTree = "<group>"; };
 		783A3E3FF7B5E83610FB9623 /* Pods-IosProficiencyExercise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosProficiencyExercise.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IosProficiencyExercise/Pods-IosProficiencyExercise.debug.xcconfig"; sourceTree = "<group>"; };
 		C0F321EF37374A8D5C79A499 /* Pods_IosProficiencyExercise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IosProficiencyExercise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +124,7 @@
 				1223F629222584D400BB3E25 /* LaunchScreen.storyboard */,
 				1223F6592225AFB300BB3E25 /* IosProficiencyExercise-Bridging-Header.h */,
 				1223F62C222584D400BB3E25 /* Info.plist */,
+				1223F71D2227CBC100BB3E25 /* Localizable.strings */,
 			);
 			path = IosProficiencyExercise;
 			sourceTree = "<group>";
@@ -151,11 +158,11 @@
 		1223F64F222599FF00BB3E25 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				1223F71E2227CC7100BB3E25 /* Constants */,
 				1223F7032227001E00BB3E25 /* LazyImageLoad */,
 				1223F6FC2226DF6500BB3E25 /* Common */,
 				1223F6B52225B5BF00BB3E25 /* ObjectiveCFile */,
 				1223F6522225A91100BB3E25 /* Network */,
-				1223F64D222599E000BB3E25 /* Constants.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -163,6 +170,7 @@
 		1223F6522225A91100BB3E25 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				1223F7162227C84D00BB3E25 /* Reachability.swift */,
 				1223F65022259AD500BB3E25 /* NetworkClass.swift */,
 			);
 			path = Network;
@@ -203,6 +211,15 @@
 				1223F7102227211200BB3E25 /* Info.plist */,
 			);
 			path = IosProficiencyExerciseTests;
+			sourceTree = "<group>";
+		};
+		1223F71E2227CC7100BB3E25 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				1223F64D222599E000BB3E25 /* Constants.swift */,
+				1223F71F2227CC9200BB3E25 /* StringConstants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		4479835B80DC8F8321B0111F /* Frameworks */ = {
@@ -307,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1223F62B222584D400BB3E25 /* LaunchScreen.storyboard in Resources */,
+				1223F71B2227CBC100BB3E25 /* Localizable.strings in Resources */,
 				1223F6EF2226A6F900BB3E25 /* facts.json in Resources */,
 				1223F628222584D400BB3E25 /* Assets.xcassets in Resources */,
 			);
@@ -348,12 +366,16 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-IosProficiencyExercise/Pods-IosProficiencyExercise-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -377,8 +399,10 @@
 				1223F623222584D300BB3E25 /* HomeViewController.swift in Sources */,
 				1223F64E222599E000BB3E25 /* Constants.swift in Sources */,
 				1223F65122259AD500BB3E25 /* NetworkClass.swift in Sources */,
+				1223F7202227CC9200BB3E25 /* StringConstants.swift in Sources */,
 				1223F6362225893A00BB3E25 /* HomeViewModel.swift in Sources */,
 				1223F621222584D300BB3E25 /* AppDelegate.swift in Sources */,
+				1223F7172227C84D00BB3E25 /* Reachability.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +433,14 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		1223F71D2227CBC100BB3E25 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1223F71C2227CBC100BB3E25 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -416,6 +448,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -463,7 +496,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -478,6 +511,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -519,7 +553,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
