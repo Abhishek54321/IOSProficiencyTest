@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Alamofire
+
 
 let AUTHORIZATION_EXPIRY_CODE = 401
 let NETWORK_AVIALABLE_CODE = 100
@@ -21,13 +21,11 @@ class NetworkClass: NSObject {
                     
                     if let jsonData = value.data(using: String.Encoding.utf8) {
                         do {
-                            
                             let decoder = JSONDecoder()
                             let dataModel = try decoder.decode(DataModel.self, from: jsonData)
-                         
-                            success(dataModel)
-
                             
+                            success(dataModel)
+                           
                         } catch {
                             NSLog("ERROR \(error.localizedDescription)")
                         }
@@ -38,8 +36,8 @@ class NetworkClass: NSObject {
             }.resume()
         
     }
-    }
-    
+}
+
 
 
 
