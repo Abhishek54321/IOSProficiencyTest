@@ -36,7 +36,12 @@ class ContainerView: UIView  {
         PViewUtils.anchorView(table, top: 0, right: 0.0, bottom: 0, left: 0.0, in: self)
         
         table?.dataSource = self
-        table?.rowHeight = 130.0
+        if UIDevice.current.userInterfaceIdiom == .pad{
+           table?.rowHeight = 150.0
+        }else{
+                table?.rowHeight = 140.0
+        }
+    
         table?.separatorStyle = .singleLine
         
         //table?.tableHeaderView = getHeader()
@@ -70,7 +75,7 @@ class ContainerView: UIView  {
 extension ContainerView:UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cellIdentifier: String = "HomeTableViewCell"
+        let cellIdentifier: String = kCellIdentifier
         var cell: HomeTableViewCell? = (tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? HomeTableViewCell)
         if cell == nil {
             cell = HomeTableViewCell(style: .default, reuseIdentifier: cellIdentifier)
@@ -80,25 +85,25 @@ extension ContainerView:UITableViewDataSource{
             if let title = item.title {
                 cell?.titleLabel?.text = title
             } else {
-                cell?.titleLabel?.text = "Title Not Available"
+                cell?.titleLabel?.text = kTTitleUnavialable
             }
             
             if let description =  item.description{
                 cell?.descLabel?.text = description
             }  else {
-                cell?.descLabel?.text = "Desc Not Available"
+                cell?.descLabel?.text = kDescUnavialable
             }
             
             if let imageUrl = item.imageHref{
                 LazyImageLoad.setImageOnImageViewFromURL(imageView: (cell?.cellImageView)!, url: imageUrl) { (image) in
                     if image == nil {
-                        cell?.cellImageView?.image = UIImage(named: "download")
+                        cell?.cellImageView?.image = UIImage(named: "NoImagePlaceholder")
                     } else {
                         cell?.cellImageView?.image = image
                     }
                 }
             } else {
-                cell?.cellImageView?.image = UIImage(named: "download")
+                cell?.cellImageView?.image = UIImage(named: "NoImagePlaceholder")
             }
         }
         

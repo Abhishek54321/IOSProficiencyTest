@@ -7,4 +7,7 @@
 */
 
 "TABLE_CONTENT_REFRESH" = "Refreshing Content";
-"DOWNLOAD_DATA" = "Downloading data...";
+"DOWNLOAD_DATA"   = "Downloading data...";
+"CELL_IDENTIFER"  = "HomeTableViewCell";
+"TITLE_UNAVIABLE" = "Title Not Available";
+"DESC_UNAVIABLE"  = "Desc Not Available";
