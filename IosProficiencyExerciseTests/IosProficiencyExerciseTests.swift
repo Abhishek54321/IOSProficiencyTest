@@ -7,31 +7,25 @@
 //
 
 import XCTest
-
+@testable import IosProficiencyExercise
 class IosProficiencyExerciseTests: XCTestCase {
-    var title :String?=nil
+    var title :String?
+    var homeViewModel:HomeViewModel?
+    
     override func setUp() {
-        //var dataModel = DataModel
-    //dataModel.title = "About Canada"
+        super.setUp()
+
         title = "About Canada"
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+     
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        homeViewModel = nil
+        super.tearDown()
+       
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
     func testServerData(){
         // Create an expectation for a background download task.
         let expectation = XCTestExpectation(description: "Get data from server")
@@ -58,6 +52,18 @@ class IosProficiencyExerciseTests: XCTestCase {
     
     func testNavBarTitle(){
         XCTAssertEqual(title, "About Canada")
+    }
+    
+    
+    func test_fetch_details(){
+      //  let homeModel = self.homeViewModel!
+//        let url = URL(string: "https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json")
+//        let result = XCTestExpectation(description: "call")
+//        HomeViewModel.getAppList(url) { (data, 200) in
+//            data.
+//        }
+       
+        
     }
 
 }

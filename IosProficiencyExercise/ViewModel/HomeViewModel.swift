@@ -8,9 +8,9 @@
 
 import UIKit
 
-class HomeViewModel: NSObject {
+class HomeViewModel {
     //MARK: - This method take the data from Network class and callback to View.
-    class func getAppList(_ url:String,completion:@escaping(_ data:DataModel?,_ errcode:Int)->Void){
+   class func getAppList(_ url:String,completion:@escaping(_ data:DataModel?,_ errcode:Int)->Void){
             NetworkClass.fetchAppList(strUrl:url, success: { data in
             let  dataModel:DataModel = data as! DataModel
             completion(dataModel, SUCESS)

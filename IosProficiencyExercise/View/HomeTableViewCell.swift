@@ -12,8 +12,6 @@ class HomeTableViewCell: UITableViewCell {
     var cellTitle:String = ""
     var cellDesc:String  = ""
     var cellImage:UIImage? = nil
-//    var title: MultilineLabel?
-//    var desc: MultilineLabel?
     var titleLabel:UILabel?
     var descLabel:UILabel?
     var link: String = ""

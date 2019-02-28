@@ -20,7 +20,7 @@ class HomeViewController: UIViewController {
     //MARK: - Viewcontroller LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-       self.getAppDataFromServer()
+        self.getAppDataFromServer()
         self.buildTable()
         self.setupHeaderAndTitleLabel()
         
