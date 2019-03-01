@@ -1,18 +1,15 @@
 PODS:
-  - ReachabilitySwift (4.3.0)
   - SDWebImage (4.4.6):
     - SDWebImage/Core (= 4.4.6)
   - SDWebImage/Core (4.4.6)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
-  - ReachabilitySwift
   - SDWebImage
   - SVProgressHUD (from `https://github.com/SVProgressHUD/SVProgressHUD.git`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - ReachabilitySwift
     - SDWebImage
 
 EXTERNAL SOURCES:
@@ -25,10 +22,9 @@ CHECKOUT OPTIONS:
     :git: https://github.com/SVProgressHUD/SVProgressHUD.git
 
 SPEC CHECKSUMS:
-  ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
   SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 97b0fb35b987814b1605717c2f28a0acb5277d53
+PODFILE CHECKSUM: 902eb3dabec5db9c2decee62d7fd93ce32e51e6c
 
 COCOAPODS: 1.5.2

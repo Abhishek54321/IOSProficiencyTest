@@ -8,7 +8,7 @@
 
 import UIKit
 import SVProgressHUD
-import Reachability
+
 
 class ContainerViewController: UIViewController {
     
@@ -35,11 +35,11 @@ class ContainerViewController: UIViewController {
         }
     }
     //MARK: - Container View
-    //This method is for making Container View
+    //This method is for making ContainerTableView
     func buildTable() {
         table = ContainerTableView(frame: CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(view.frame.size.width), height: CGFloat(100)), menuResourceId: resourcemenuID )
         view.addSubview(table!)
-       table?.translatesAutoresizingMaskIntoConstraints = false
+        table?.translatesAutoresizingMaskIntoConstraints = false
         table?.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         table?.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
         table?.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
@@ -59,7 +59,6 @@ class ContainerViewController: UIViewController {
         let urls = prodURL
         HomeViewModel.getAppList(urls){ (data,error)  in
             if data != nil {
-                //self.showActivityIndicator(false)
                 SVProgressHUD.dismiss()
                 self.dataModel = data
                 //For updating data in main Thread
