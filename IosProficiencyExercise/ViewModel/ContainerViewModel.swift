@@ -9,11 +9,22 @@
 import UIKit
 
 class ContainerViewModel {
-    //MARK: - This method take the data from Network class and callback to View.
+/*
+ This method is used for getting data from Network Class
+     and parsing data and Storing into DataModel class.
+
+*/
    class func getAppList(_ url:String,completion:@escaping(_ data:DataModel?,_ errcode:Int)->Void){
             NetworkClass.fetchAppList(strUrl:url, success: { data in
-            let  dataModel:DataModel = data as! DataModel
-            completion(dataModel, SUCESS)
+                do {
+                    let decoder = JSONDecoder()
+                    let dataModel = try decoder.decode(DataModel.self, from: data as! Data)
+                    
+                    completion(dataModel,SUCESS)
+                    
+                } catch {
+                    NSLog("ERROR \(error.localizedDescription)")
+                }
             
         },failure:{ error in
             

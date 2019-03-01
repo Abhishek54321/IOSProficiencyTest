@@ -8,7 +8,6 @@ target 'IosProficiencyExercise' do
   # Pods for IosProficiencyExercise
 
   pod 'SDWebImage'
-  
   pod 'SVProgressHUD', :git => 'https://github.com/SVProgressHUD/SVProgressHUD.git'
-  #pod 'ReachabilitySwift'
+
 end

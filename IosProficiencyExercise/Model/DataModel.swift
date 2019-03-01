@@ -8,6 +8,10 @@
 
 import UIKit
 
+/*
+ This Data model  used for
+ storing data.Here Used Codable for encoding and decoding.
+ */
 struct DataModel:Codable {
     var title:String?
     var rows:[TableRowsDesc]?

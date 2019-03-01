@@ -9,26 +9,18 @@
 import UIKit
 
 
-let AUTHORIZATION_EXPIRY_CODE = 401
-let NETWORK_AVIALABLE_CODE = 100
 class NetworkClass: NSObject {
     
+    /*
+     This method is used for fetching list
+     of Data from server.Here Returning Data to ContainerViewModel.
+     */
     class func fetchAppList(strUrl:String,success:@escaping(Any)->Void,failure:@escaping(Error)->Void) {
         URLSession.shared.dataTask(with: URL(string: strUrl)!) { (data, res, err) in
-            
             if let facts = data {
                 if let value = String(data: facts, encoding: String.Encoding.ascii) {
-                    
                     if let jsonData = value.data(using: String.Encoding.utf8) {
-                        do {
-                            let decoder = JSONDecoder()
-                            let dataModel = try decoder.decode(DataModel.self, from: jsonData)
-                            
-                            success(dataModel)
-                           
-                        } catch {
-                            NSLog("ERROR \(error.localizedDescription)")
-                        }
+                        success(jsonData)
                     }
                 }
                 

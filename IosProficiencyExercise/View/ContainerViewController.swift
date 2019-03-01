@@ -12,7 +12,7 @@ import SVProgressHUD
 
 class ContainerViewController: UIViewController {
     
-    var table: ContainerTableView?
+    var containerTableView: ContainerTableView?
     var resourcemenuID:String = ""
     var resourceTitle:String = ""
     var dataModel:DataModel? = nil
@@ -21,32 +21,51 @@ class ContainerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.getAppDataFromServer()
-        self.buildTable()
-        self.setupHeaderAndTitleLabel()
-        
+        self.buildContainerTableView()
+       
     }
     
     override func viewWillAppear(_ animated: Bool) {
+     self.checkNetWorkConnectivity()
+    }
+    
+/*
+     This method is used for checking network
+     connectivity and showing Progress bar if
+     network is there otherwise showNetwork
+     Alert message.
+ 
+ */
+    func  checkNetWorkConnectivity(){
         if NWReachability.connectedToNetwork(){
+            //showing Progress bar
             SVProgressHUD.show(withStatus: kDownloadData)
-            print("Ineternet is there")
+            
         }else{
             self.showNetworkAlert()
         }
     }
     //MARK: - Container View
-    //This method is for making ContainerTableView
-    func buildTable() {
-        table = ContainerTableView(frame: CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(view.frame.size.width), height: CGFloat(100)), menuResourceId: resourcemenuID )
-        view.addSubview(table!)
-        table?.translatesAutoresizingMaskIntoConstraints = false
-        table?.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
-        table?.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
-        table?.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        table?.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+/*
+     This method is mainly used for making container View in ContainerViewController.
+     and added constraint.
+     
+ */
+    func buildContainerTableView() {
+        containerTableView = ContainerTableView(frame: CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(view.frame.size.width), height: CGFloat(100)), menuResourceId: resourcemenuID )
+        view.addSubview(containerTableView!)
+        containerTableView?.translatesAutoresizingMaskIntoConstraints = false
+        containerTableView?.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        containerTableView?.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        containerTableView?.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        containerTableView?.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
 
     }
-    
+/*
+ This method  is used for setting title
+     in navigation bar.
+     
+ */
     func setupHeaderAndTitleLabel() {
         if let navTitle = dataModel?.title{
             self.title = navTitle
@@ -54,7 +73,12 @@ class ContainerViewController: UIViewController {
         
     }
     //MARK: - getAppDataFromServer
-    //This method Get data from Server
+ /*
+   This method used for getting data from
+     server and after getting data from server
+     passed it ContainerTableView .Also setting title
+     in Navigation bar of ContainerViewController.
+ */
     func getAppDataFromServer(){
         let urls = prodURL
         ContainerViewModel.getAppList(urls){ (data,error)  in
@@ -64,13 +88,16 @@ class ContainerViewController: UIViewController {
                 //For updating data in main Thread
                 DispatchQueue.main.async {
                     self.setupHeaderAndTitleLabel()
-                    self.table!.getModelData(dataModel: self.dataModel!)
+                    self.containerTableView!.getModelData(dataModel: self.dataModel!)
                 }
             }
         }
     }
     //MARK: - showNetworkAlert
-    //This method show  Alert if network connection is not there
+   /*
+     This method is used for showing Network Alert.
+     If network is not there,its shows alert message.
+ */
     func showNetworkAlert(){
         let alert = UIAlertController(title: kNoInternet, message: kNoInternetMessage, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: kOK, style: .cancel, handler: { action in
@@ -88,7 +115,9 @@ class ContainerViewController: UIViewController {
     }
 }
 //MARK: - RefreshDataProtocol
-//This method take latest data from server
+/*
+ This method is used for taking updated data from server
+ */
 extension ContainerViewController: RefreshDataProtocol {
     func updateDataFromServer() -> Void {
         getAppDataFromServer()

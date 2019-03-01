@@ -19,3 +19,5 @@ let timeoutValueFor3G = 120.0
 let timeoutValueFor4G = 60.0
 let defaultTimeoutValue = 30.0
 
+let AUTHORIZATION_EXPIRY_CODE = 401
+let NETWORK_AVIALABLE_CODE = 100

@@ -28,7 +28,10 @@ class ContainerTableView: UIView  {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    //This method is used building table
+    /*
+     This method is used for making table view
+     and also setting constraint in table View
+     */
     fileprivate func buildTable() {
         table = UITableView(frame: CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(frame.size.width), height: CGFloat(frame.size.height)), style: .plain)
         table?.register(ContainerTableViewCell.self, forCellReuseIdentifier: kCellIdentifier)
@@ -42,14 +45,7 @@ class ContainerTableView: UIView  {
         table?.separatorStyle = .singleLine
         table?.allowsSelection = false
         addSubview(table!)
-       // table?.layoutMargins = .zero
-      //  addSubview(table!)
-//        table?.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-//        // table?.leadingAnchor.
-//        table?.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-//        table?.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-//        table?.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-      
+        
         table?.translatesAutoresizingMaskIntoConstraints = false
         let topConstraint = NSLayoutConstraint(item: table!, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 0)
         
@@ -58,45 +54,54 @@ class ContainerTableView: UIView  {
         let  leftConstraint = NSLayoutConstraint(item: table!, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1.0, constant: 0)
         let  rightConstraint = NSLayoutConstraint(item: table!, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1.0, constant: 0)
         self.addConstraints([topConstraint, bottomConstraint, leftConstraint,rightConstraint])
-
-//        table?.translatesAutoresizingMaskIntoConstraints = false
-//        table?.leadingAnchor.constraint(equalTo: (table?.leadingAnchor)!).isActive = true
-//        table?.trailingAnchor.constraint(equalTo: (table?.trailingAnchor)!).isActive = true
-//        table?.topAnchor.constraint(equalTo:  (table?.topAnchor)!).isActive = true
-//        table?.bottomAnchor.constraint(equalTo: (table?.bottomAnchor)!).isActive = true
+        
         table?.backgroundColor = UIColor.clear
         refreshControl.attributedTitle = NSAttributedString(string: kRefreshContent)
         refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: UIControl.Event.valueChanged)
         table?.addSubview(refreshControl)
     }
-    //This method is used for taking Model data
+    
+    /*
+     This method is used for receving model data from ContainerViewController
+     after service Call and reloding ContainerTableView Data.
+     */
     func getModelData(dataModel:DataModel){
         self.dataModel = dataModel
         table?.reloadData()
         endRefreshControl()
     }
-   // This method is used for taking refresh data
+    /*
+     This method is used for taking refresh ContainerView Data
+     and take updated data from server.
+     */
     @objc func refresh(sender:AnyObject) {
         // Code to refresh table view
         if delegate != nil {
             delegate?.updateDataFromServer()
         }
     }
-    
+    /*
+     This method is used for end refresh after fetching
+     latest data from server.
+     */
     func endRefreshControl() -> Void {
         refreshControl.endRefreshing()
     }
 }
 //MARK: - UITableViewDataSource
+/*
+ Created  extension for ContainerTableView for  writing TableView method seperately.
+ */
 extension ContainerTableView:UITableViewDataSource{
+/*
+     This is used for filling content in Cell and reusing same cell.
+     If there is no image coming from server, Putting default image
+     in Placeholder,Similarly doing for title and Description.
+*/
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cellIdentifier: String = kCellIdentifier
         var cell: ContainerTableViewCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! ContainerTableViewCell
-        if cell == nil {
-            cell = ContainerTableViewCell(style: .default, reuseIdentifier: cellIdentifier)
-        }
-        
+        cell = ContainerTableViewCell(style: .default, reuseIdentifier: cellIdentifier)
         if let item:TableRowsDesc = self.dataModel?.rows![indexPath.row] {
             
             if let title = item.title {
@@ -109,7 +114,7 @@ extension ContainerTableView:UITableViewDataSource{
                 cell.descLabel.text = description
             }  else {
                 cell.descLabel.text = kDescUnavialable
-
+                
             }
             
             if let imageUrl = item.imageHref{
@@ -128,6 +133,9 @@ extension ContainerTableView:UITableViewDataSource{
         return cell
         
     }
+    /*
+     This method return number of rows  in TableView
+     */
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let count = self.dataModel?.rows?.count{
             return count
@@ -136,6 +144,9 @@ extension ContainerTableView:UITableViewDataSource{
         }
         
     }
+    /*
+     This method return number of Section in TableView
+     */
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

@@ -1,19 +1,13 @@
-/** -------------------------------------------------------------
- * Copyright (C) 2017 Redken, Inc. All trade marks registered
- *
- * This file is part of Redken Style Station Mobile Project.
- *
- * Redken Style Station Mobile Project can not be copied and/or
- *
- * distributed without the express permission of Redken, Inc.
- *
- * -------------------------------------------------------------
- **/
+
 import Foundation
 import SystemConfiguration
 import CoreTelephony
 
 public class NWReachability{
+/*
+ This method  is used checking Connectivity.
+  If Network access is there,then return true otherwise false.
+ */
     class func isConnectedToNetwork() -> Bool {
         
         var zeroAddress = sockaddr_in(sin_len: 0, sin_family: 0, sin_port: 0, sin_addr: in_addr(s_addr: 0), sin_zero: (0, 0, 0, 0, 0, 0, 0, 0))
@@ -73,7 +67,10 @@ public class NWReachability{
         return (isReachable && !needsConnection)
         
     }
-    
+/*
+This method is used for showing timeout error
+     based on 2G,3G,wifi and LAN connection.
+*/
     class func getTimeoutValue() -> TimeInterval{
         // Check for 3G
         // Setup the Network Info and create a CTCarrier object

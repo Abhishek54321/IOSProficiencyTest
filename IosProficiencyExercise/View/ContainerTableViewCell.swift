@@ -33,9 +33,6 @@ class ContainerTableViewCell: UITableViewCell {
         cellImageView.contentMode = .scaleToFill
         return cellImageView
     }()
-    var link: String = ""
-    var titleSt: String = ""
-    var descSt: String = ""
 
     
     override func awakeFromNib() {
@@ -53,7 +50,6 @@ class ContainerTableViewCell: UITableViewCell {
     }
     override func layoutSubviews() {
         super.layoutSubviews()
-        
     
     }
     
@@ -66,7 +62,9 @@ class ContainerTableViewCell: UITableViewCell {
     }
     
 //MARK: - buildCellForIphone
-//Here making cell for iphones
+/*
+     Adding constraint in ContainerTableViewCell for iphones devices
+ */
     func buildCellForIphone() {
         let tgWidth: CGFloat = UIScreen.main.bounds.size.width - 120.0
 
@@ -83,11 +81,9 @@ class ContainerTableViewCell: UITableViewCell {
         titleLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
         titleLabel.leadingAnchor.constraint(equalTo: self.cellImageView.trailingAnchor,constant:10.0).isActive = true
         titleLabel.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor,constant:20.0).isActive = true
-
-
+        
         descLabel.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: -2.0).isActive = true
         descLabel.leadingAnchor.constraint(equalTo: self.cellImageView.trailingAnchor,constant:10.0).isActive = true
-    
         descLabel.widthAnchor.constraint(equalToConstant: tgWidth).isActive = true
         descLabel.heightAnchor.constraint(equalToConstant: 100).isActive = true
     
@@ -97,7 +93,9 @@ class ContainerTableViewCell: UITableViewCell {
     }
     
 //MARK: - buildCellForIpad
-//Here making cell for iPad
+    /*
+     Adding constraint in ContainerTableViewCell for iPad devices
+     */
     func buildCellForIpad() {
         let tgWidth: CGFloat = UIScreen.main.bounds.size.width - 290.0
       
@@ -124,10 +122,4 @@ class ContainerTableViewCell: UITableViewCell {
         
     }
    
-    func setItem(titleTxt: String, descTxt:String) {
-        titleSt = titleTxt
-        descSt = descTxt
-    }
-   
-    
 }
