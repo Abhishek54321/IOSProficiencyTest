@@ -4,7 +4,8 @@
 //
 //  Created by Abhishek Singh on 26/02/19.
 //  Copyright © 2019 Abhishek Singh. All rights reserved.
-//
+//This file is used for Constructing TableView and
+//extending class for using TableView datasource method
 
 import UIKit
 
@@ -35,8 +36,7 @@ class ContainerTableView: UIView  {
     fileprivate func buildTable() {
         table = UITableView(frame: CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(frame.size.width), height: CGFloat(frame.size.height)), style: .plain)
         table?.register(ContainerTableViewCell.self, forCellReuseIdentifier: kCellIdentifier)
-        //PViewUtils.anchorView(table, top: 0, right: 0.0, bottom: 0, left: 0.0, in: self)
-        table?.dataSource = self
+         table?.dataSource = self
         if UIDevice.current.userInterfaceIdiom == .pad{
             table?.rowHeight = 150.0
         }else{

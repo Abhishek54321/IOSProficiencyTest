@@ -12,6 +12,9 @@ class ContainerTableViewCell: UITableViewCell {
     var cellTitle:String = ""
     var cellDesc:String  = ""
     var cellImage:UIImage? = nil
+/*
+   Creating Title Label and setting font.
+*/
     lazy var titleLabel:UILabel = {
         let title = UILabel()
         title.translatesAutoresizingMaskIntoConstraints = false
@@ -19,6 +22,9 @@ class ContainerTableViewCell: UITableViewCell {
 
         return title
     }()
+/*
+     Creating Description Label and setting font.
+*/
     lazy var descLabel:UILabel = {
         let descLabel = UILabel()
         descLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -27,6 +33,10 @@ class ContainerTableViewCell: UITableViewCell {
         descLabel.sizeToFit()
         return descLabel
     }()
+/*
+ Creating Image View and setting mode
+ 
+ */
     lazy var cellImageView:UIImageView = {
         let cellImageView = UIImageView()
         cellImageView.translatesAutoresizingMaskIntoConstraints = false
