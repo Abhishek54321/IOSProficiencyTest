@@ -10,7 +10,7 @@ import XCTest
 @testable import IosProficiencyExercise
 class IosProficiencyExerciseTests: XCTestCase {
     var title :String?
-    var homeViewModel:HomeViewModel?
+    var homeViewModel:ContainerViewModel?
     var datamodel:DataModel?
     
     override func setUp() {
@@ -30,7 +30,7 @@ class IosProficiencyExerciseTests: XCTestCase {
     
     func testData(){
         let expectation = XCTestExpectation(description: "Get data from server")
-        HomeViewModel.getAppList("https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json", completion: {(data,sucess)
+        ContainerViewModel.getAppList("https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json", completion: {(data,sucess)
             in
             expectation.fulfill()
         })

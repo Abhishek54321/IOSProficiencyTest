@@ -11,7 +11,7 @@
 		1223F623222584D300BB3E25 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223F622222584D300BB3E25 /* ContainerViewController.swift */; };
 		1223F628222584D400BB3E25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1223F627222584D400BB3E25 /* Assets.xcassets */; };
 		1223F62B222584D400BB3E25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1223F629222584D400BB3E25 /* LaunchScreen.storyboard */; };
-		1223F6362225893A00BB3E25 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223F6352225893A00BB3E25 /* HomeViewModel.swift */; };
+		1223F6362225893A00BB3E25 /* ContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223F6352225893A00BB3E25 /* ContainerViewModel.swift */; };
 		1223F6382225899600BB3E25 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223F6372225899600BB3E25 /* DataModel.swift */; };
 		1223F63E22258F4000BB3E25 /* ContainerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223F63D22258F4000BB3E25 /* ContainerTableViewCell.swift */; };
 		1223F64E222599E000BB3E25 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223F64D222599E000BB3E25 /* Constants.swift */; };
@@ -43,7 +43,7 @@
 		1223F627222584D400BB3E25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1223F62A222584D400BB3E25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1223F62C222584D400BB3E25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1223F6352225893A00BB3E25 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		1223F6352225893A00BB3E25 /* ContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewModel.swift; sourceTree = "<group>"; };
 		1223F6372225899600BB3E25 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		1223F63D22258F4000BB3E25 /* ContainerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerTableViewCell.swift; sourceTree = "<group>"; };
 		1223F64D222599E000BB3E25 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -139,7 +139,7 @@
 		1223F6342225855100BB3E25 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				1223F6352225893A00BB3E25 /* HomeViewModel.swift */,
+				1223F6352225893A00BB3E25 /* ContainerViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -386,7 +386,7 @@
 				1223F64E222599E000BB3E25 /* Constants.swift in Sources */,
 				1223F65122259AD500BB3E25 /* NetworkClass.swift in Sources */,
 				1223F7202227CC9200BB3E25 /* StringConstants.swift in Sources */,
-				1223F6362225893A00BB3E25 /* HomeViewModel.swift in Sources */,
+				1223F6362225893A00BB3E25 /* ContainerViewModel.swift in Sources */,
 				1223F621222584D300BB3E25 /* AppDelegate.swift in Sources */,
 				1223F7172227C84D00BB3E25 /* Reachability.swift in Sources */,
 			);

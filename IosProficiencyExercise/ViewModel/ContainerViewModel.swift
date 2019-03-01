@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewModel {
+class ContainerViewModel {
     //MARK: - This method take the data from Network class and callback to View.
    class func getAppList(_ url:String,completion:@escaping(_ data:DataModel?,_ errcode:Int)->Void){
             NetworkClass.fetchAppList(strUrl:url, success: { data in

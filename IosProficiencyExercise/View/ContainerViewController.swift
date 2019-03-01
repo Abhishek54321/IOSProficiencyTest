@@ -57,7 +57,7 @@ class ContainerViewController: UIViewController {
     //This method Get data from Server
     func getAppDataFromServer(){
         let urls = prodURL
-        HomeViewModel.getAppList(urls){ (data,error)  in
+        ContainerViewModel.getAppList(urls){ (data,error)  in
             if data != nil {
                 SVProgressHUD.dismiss()
                 self.dataModel = data
