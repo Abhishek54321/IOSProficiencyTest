@@ -96,6 +96,7 @@ extension ContainerTableView:UITableViewDataSource{
         if cell == nil {
             cell = ContainerTableViewCell(style: .default, reuseIdentifier: cellIdentifier)
         }
+        
         if let item:TableRowsDesc = self.dataModel?.rows![indexPath.row] {
             
             if let title = item.title {
@@ -105,9 +106,9 @@ extension ContainerTableView:UITableViewDataSource{
             }
             
             if let description =  item.description{
-                cell.descLabel.attributedText = NSAttributedString(string: description, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12.0)])
+                cell.descLabel.text = description
             }  else {
-                cell.descLabel.attributedText = NSAttributedString(string: kDescUnavialable, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 12.0)])
+                cell.descLabel.text = kDescUnavialable
 
             }
             

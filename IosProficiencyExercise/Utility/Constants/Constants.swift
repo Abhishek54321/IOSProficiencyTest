@@ -11,7 +11,7 @@ import UIKit
 let prodURL = "https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json"
 let SUCESS = 200
 
-let kMarginFlexible = PViewUtils.getFlexibleMargin()
+
 
 let timeoutValueForWiFi = 30.0
 let timeoutValueFor2G = 180.0

@@ -12,23 +12,29 @@ class IosProficiencyExerciseTests: XCTestCase {
     var title :String?
     var homeViewModel:ContainerViewModel?
     var datamodel:DataModel?
-    
+    //Mark: - Testing LifeCycle
+    /*
+     Here Setting initial Value and creating instance which is used for testing
+     */
     override func setUp() {
         super.setUp()
             datamodel = DataModel()
-       // title = "About Canada"
-        
-        
+       
     }
-    
+    /*
+     This method execute after running test cases
+     Here setting nil value to instances
+     
+    */
     override func tearDown() {
         homeViewModel = nil
         datamodel = nil
         super.tearDown()
         
     }
-    
-    func testData(){
+    //Mark: -testServerData
+    //This method check data coming from server or not
+    func testServerData(){
         let expectation = XCTestExpectation(description: "Get data from server")
         ContainerViewModel.getAppList("https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json", completion: {(data,sucess)
             in
@@ -37,35 +43,19 @@ class IosProficiencyExerciseTests: XCTestCase {
         wait(for: [expectation], timeout: 10.0)
     }
     
-    
-    func testServerData(){
-        // Create an expectation for a background download task.
-        let expectation = XCTestExpectation(description: "Get data from server")
-        
-        // Create a URL for a web page to be downloaded.
-        let url = URL(string: "https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json")
-        
-        // Create a background task to download the web page.
-        let dataTask = URLSession.shared.dataTask(with: url!) { (data, _, _) in
-            
-            // Make sure we downloaded some data.
-            XCTAssertNotNil(data, "No data was downloaded.")
-            //  XCTAssertNil(data, "No data was downloaded.")
-            
-            // Fulfill the expectation to indicate that the background task has finished successfully.
-            expectation.fulfill()
-            
-            
-        }
-        // Start the download task.
-        dataTask.resume()
-        
-    }
-    func testNetwork(){
+    /*
+     This method is used for checking network avialablity is there or not
+     */
+   
+    func testNetworkAvialability(){
         let bool = NWReachability.connectedToNetwork()
         XCTAssertTrue(bool, "Suceess")
         
     }
+    
+    /*
+     This method is used for Testing navigation bar Title of ContainerViewController.
+     */
     func testNavBarTitle(){
      
         if let title = datamodel!.title{
@@ -73,7 +63,10 @@ class IosProficiencyExerciseTests: XCTestCase {
         }
        
     }
-    func testNumbersOfRow(){
+    /*
+    This method is used for Testing number of rows in ContainerTableView
+    */
+    func testNumbersOfRowOfContainerTableView(){
         
         guard let tableRows = datamodel!.rows, let count = tableRows.count as? Int else{
            return
