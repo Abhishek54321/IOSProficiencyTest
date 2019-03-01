@@ -31,7 +31,7 @@ class ContainerTableView: UIView  {
     //This method is used building table
     fileprivate func buildTable() {
         table = UITableView(frame: CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(frame.size.width), height: CGFloat(frame.size.height)), style: .plain)
-        table?.register(HomeTableViewCell.self, forCellReuseIdentifier: kCellIdentifier)
+        table?.register(ContainerTableViewCell.self, forCellReuseIdentifier: kCellIdentifier)
         //PViewUtils.anchorView(table, top: 0, right: 0.0, bottom: 0, left: 0.0, in: self)
         table?.dataSource = self
         if UIDevice.current.userInterfaceIdiom == .pad{
@@ -92,9 +92,9 @@ extension ContainerTableView:UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellIdentifier: String = kCellIdentifier
-        var cell: HomeTableViewCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! HomeTableViewCell
+        var cell: ContainerTableViewCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! ContainerTableViewCell
         if cell == nil {
-            cell = HomeTableViewCell(style: .default, reuseIdentifier: cellIdentifier)
+            cell = ContainerTableViewCell(style: .default, reuseIdentifier: cellIdentifier)
         }
         if let item:TableRowsDesc = self.dataModel?.rows![indexPath.row] {
             

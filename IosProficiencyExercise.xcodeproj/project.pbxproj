@@ -8,18 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		1223F621222584D300BB3E25 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223F620222584D300BB3E25 /* AppDelegate.swift */; };
-		1223F623222584D300BB3E25 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223F622222584D300BB3E25 /* HomeViewController.swift */; };
+		1223F623222584D300BB3E25 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223F622222584D300BB3E25 /* ContainerViewController.swift */; };
 		1223F628222584D400BB3E25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1223F627222584D400BB3E25 /* Assets.xcassets */; };
 		1223F62B222584D400BB3E25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1223F629222584D400BB3E25 /* LaunchScreen.storyboard */; };
 		1223F6362225893A00BB3E25 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223F6352225893A00BB3E25 /* HomeViewModel.swift */; };
 		1223F6382225899600BB3E25 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223F6372225899600BB3E25 /* DataModel.swift */; };
-		1223F63E22258F4000BB3E25 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223F63D22258F4000BB3E25 /* HomeTableViewCell.swift */; };
+		1223F63E22258F4000BB3E25 /* ContainerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223F63D22258F4000BB3E25 /* ContainerTableViewCell.swift */; };
 		1223F64E222599E000BB3E25 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223F64D222599E000BB3E25 /* Constants.swift */; };
 		1223F65122259AD500BB3E25 /* NetworkClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223F65022259AD500BB3E25 /* NetworkClass.swift */; };
 		1223F6E422264F7F00BB3E25 /* PViewUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1223F6E322264F7F00BB3E25 /* PViewUtils.m */; };
-		1223F6E822265E1900BB3E25 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223F6E722265E1900BB3E25 /* ContainerView.swift */; };
-		1223F6F82226D03200BB3E25 /* MultilineLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1223F6F62226D03200BB3E25 /* MultilineLabel.m */; };
-		1223F6FB2226D06F00BB3E25 /* FontFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 1223F6FA2226D06F00BB3E25 /* FontFactory.m */; };
+		1223F6E822265E1900BB3E25 /* ContainerTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223F6E722265E1900BB3E25 /* ContainerTableView.swift */; };
 		1223F7052227004000BB3E25 /* LazyImageLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223F7042227004000BB3E25 /* LazyImageLoad.swift */; };
 		1223F70F2227211200BB3E25 /* IosProficiencyExerciseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223F70E2227211200BB3E25 /* IosProficiencyExerciseTests.swift */; };
 		1223F7172227C84D00BB3E25 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1223F7162227C84D00BB3E25 /* Reachability.swift */; };
@@ -41,23 +39,18 @@
 /* Begin PBXFileReference section */
 		1223F61D222584D300BB3E25 /* IosProficiencyExercise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IosProficiencyExercise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1223F620222584D300BB3E25 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1223F622222584D300BB3E25 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		1223F622222584D300BB3E25 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		1223F627222584D400BB3E25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1223F62A222584D400BB3E25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1223F62C222584D400BB3E25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1223F6352225893A00BB3E25 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		1223F6372225899600BB3E25 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
-		1223F63D22258F4000BB3E25 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		1223F63D22258F4000BB3E25 /* ContainerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerTableViewCell.swift; sourceTree = "<group>"; };
 		1223F64D222599E000BB3E25 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1223F65022259AD500BB3E25 /* NetworkClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClass.swift; sourceTree = "<group>"; };
-		1223F6592225AFB300BB3E25 /* IosProficiencyExercise-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IosProficiencyExercise-Bridging-Header.h"; sourceTree = "<group>"; };
 		1223F6C22225B5BF00BB3E25 /* PViewUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PViewUtils.h; sourceTree = "<group>"; };
 		1223F6E322264F7F00BB3E25 /* PViewUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PViewUtils.m; sourceTree = "<group>"; };
-		1223F6E722265E1900BB3E25 /* ContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
-		1223F6F62226D03200BB3E25 /* MultilineLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultilineLabel.m; sourceTree = "<group>"; };
-		1223F6F72226D03200BB3E25 /* MultilineLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultilineLabel.h; sourceTree = "<group>"; };
-		1223F6F92226D06F00BB3E25 /* FontFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontFactory.h; sourceTree = "<group>"; };
-		1223F6FA2226D06F00BB3E25 /* FontFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontFactory.m; sourceTree = "<group>"; };
+		1223F6E722265E1900BB3E25 /* ContainerTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerTableView.swift; sourceTree = "<group>"; };
 		1223F7042227004000BB3E25 /* LazyImageLoad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyImageLoad.swift; sourceTree = "<group>"; };
 		1223F70C2227211200BB3E25 /* IosProficiencyExerciseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IosProficiencyExerciseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1223F70E2227211200BB3E25 /* IosProficiencyExerciseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosProficiencyExerciseTests.swift; sourceTree = "<group>"; };
@@ -112,14 +105,13 @@
 		1223F61F222584D300BB3E25 /* IosProficiencyExercise */ = {
 			isa = PBXGroup;
 			children = (
+				1223F620222584D300BB3E25 /* AppDelegate.swift */,
 				1223F6342225855100BB3E25 /* ViewModel */,
 				1223F6332225854800BB3E25 /* View */,
 				1223F6322225853C00BB3E25 /* Model */,
-				1223F620222584D300BB3E25 /* AppDelegate.swift */,
 				1223F627222584D400BB3E25 /* Assets.xcassets */,
 				1223F64F222599FF00BB3E25 /* Utility */,
 				1223F629222584D400BB3E25 /* LaunchScreen.storyboard */,
-				1223F6592225AFB300BB3E25 /* IosProficiencyExercise-Bridging-Header.h */,
 				1223F62C222584D400BB3E25 /* Info.plist */,
 				1223F71D2227CBC100BB3E25 /* Localizable.strings */,
 			);
@@ -137,9 +129,9 @@
 		1223F6332225854800BB3E25 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1223F6E722265E1900BB3E25 /* ContainerView.swift */,
-				1223F622222584D300BB3E25 /* HomeViewController.swift */,
-				1223F63D22258F4000BB3E25 /* HomeTableViewCell.swift */,
+				1223F6E722265E1900BB3E25 /* ContainerTableView.swift */,
+				1223F622222584D300BB3E25 /* ContainerViewController.swift */,
+				1223F63D22258F4000BB3E25 /* ContainerTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -155,6 +147,7 @@
 		1223F64F222599FF00BB3E25 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				1223F72522291FCC00BB3E25 /* ConstraintProvider */,
 				1223F71E2227CC7100BB3E25 /* Constants */,
 				1223F7032227001E00BB3E25 /* LazyImageLoad */,
 				1223F6FC2226DF6500BB3E25 /* Common */,
@@ -176,10 +169,6 @@
 		1223F6B52225B5BF00BB3E25 /* ObjectiveCFile */ = {
 			isa = PBXGroup;
 			children = (
-				1223F6F92226D06F00BB3E25 /* FontFactory.h */,
-				1223F6FA2226D06F00BB3E25 /* FontFactory.m */,
-				1223F6F72226D03200BB3E25 /* MultilineLabel.h */,
-				1223F6F62226D03200BB3E25 /* MultilineLabel.m */,
 				1223F6E322264F7F00BB3E25 /* PViewUtils.m */,
 				1223F6C22225B5BF00BB3E25 /* PViewUtils.h */,
 			);
@@ -217,6 +206,13 @@
 				1223F71F2227CC9200BB3E25 /* StringConstants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		1223F72522291FCC00BB3E25 /* ConstraintProvider */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ConstraintProvider;
 			sourceTree = "<group>";
 		};
 		4479835B80DC8F8321B0111F /* Frameworks */ = {
@@ -384,13 +380,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1223F6E422264F7F00BB3E25 /* PViewUtils.m in Sources */,
-				1223F6FB2226D06F00BB3E25 /* FontFactory.m in Sources */,
 				1223F6382225899600BB3E25 /* DataModel.swift in Sources */,
-				1223F6E822265E1900BB3E25 /* ContainerView.swift in Sources */,
-				1223F63E22258F4000BB3E25 /* HomeTableViewCell.swift in Sources */,
+				1223F6E822265E1900BB3E25 /* ContainerTableView.swift in Sources */,
+				1223F63E22258F4000BB3E25 /* ContainerTableViewCell.swift in Sources */,
 				1223F7052227004000BB3E25 /* LazyImageLoad.swift in Sources */,
-				1223F6F82226D03200BB3E25 /* MultilineLabel.m in Sources */,
-				1223F623222584D300BB3E25 /* HomeViewController.swift in Sources */,
+				1223F623222584D300BB3E25 /* ContainerViewController.swift in Sources */,
 				1223F64E222599E000BB3E25 /* Constants.swift in Sources */,
 				1223F65122259AD500BB3E25 /* NetworkClass.swift in Sources */,
 				1223F7202227CC9200BB3E25 /* StringConstants.swift in Sources */,
@@ -567,7 +561,7 @@
 				DEVELOPMENT_TEAM = MZU2NLA2VP;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = IosProficiencyExercise/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -596,7 +590,7 @@
 				DEVELOPMENT_TEAM = MZU2NLA2VP;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = IosProficiencyExercise/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

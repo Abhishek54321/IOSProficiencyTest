@@ -10,9 +10,9 @@ import UIKit
 import SVProgressHUD
 import Reachability
 
-class HomeViewController: UIViewController {
+class ContainerViewController: UIViewController {
     
-    var table: ContainerView?
+    var table: ContainerTableView?
     var resourcemenuID:String = ""
     var resourceTitle:String = ""
     var dataModel:DataModel? = nil
@@ -28,7 +28,7 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         if NWReachability.connectedToNetwork(){
-              SVProgressHUD.show(withStatus: kDownloadData)
+            SVProgressHUD.show(withStatus: kDownloadData)
             print("Ineternet is there")
         }else{
             self.showNetworkAlert()
@@ -37,10 +37,14 @@ class HomeViewController: UIViewController {
     //MARK: - Container View
     //This method is for making Container View
     func buildTable() {
-        table = ContainerView(frame: CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(view.frame.size.width), height: CGFloat(100)), menuResourceId: resourcemenuID )
-        table?.delegate = self
-        PViewUtils.anchorView(table, top: 0, right: 0, bottom: 0, left: 0, in: view)
+        table = ContainerTableView(frame: CGRect(x: CGFloat(0), y: CGFloat(0), width: CGFloat(view.frame.size.width), height: CGFloat(100)), menuResourceId: resourcemenuID )
         view.addSubview(table!)
+       table?.translatesAutoresizingMaskIntoConstraints = false
+        table?.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        table?.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        table?.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        table?.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+
     }
     
     func setupHeaderAndTitleLabel() {
@@ -76,9 +80,9 @@ class HomeViewController: UIViewController {
                 break
             case .cancel:
                 self.dismiss(animated: true, completion: nil)
-               
+                
             case .destructive:
-                 break
+                break
                 
             }}))
         self.present(alert, animated: true, completion: nil)
@@ -86,7 +90,7 @@ class HomeViewController: UIViewController {
 }
 //MARK: - RefreshDataProtocol
 //This method take latest data from server
-extension HomeViewController: RefreshDataProtocol {
+extension ContainerViewController: RefreshDataProtocol {
     func updateDataFromServer() -> Void {
         getAppDataFromServer()
     }
