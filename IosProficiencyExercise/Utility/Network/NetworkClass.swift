@@ -16,7 +16,17 @@ class NetworkClass: NSObject {
      of Data from server.Here Returning Data to ContainerViewModel.
      */
     class func fetchAppList(strUrl:String,success:@escaping(Any)->Void,failure:@escaping(Error)->Void) {
-        URLSession.shared.dataTask(with: URL(string: strUrl)!) { (data, res, err) in
+        guard let url = URL(string: strUrl) else {
+            print("Error: cannot create URL")
+            return
+        }
+        let urlRequest = URLRequest(url: url)
+        
+        // set up the session
+        let config = URLSessionConfiguration.default
+        let session = URLSession(configuration: config)
+        
+        session.dataTask(with: urlRequest) { (data, res, err) in
             if let facts = data {
                 if let value = String(data: facts, encoding: String.Encoding.ascii) {
                     if let jsonData = value.data(using: String.Encoding.utf8) {

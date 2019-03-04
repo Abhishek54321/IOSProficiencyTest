@@ -36,6 +36,10 @@
     <dict>
         <key>NSAllowsArbitraryLoads</key>
         <true/>
+        <key>NSExceptionAllowsInsecureHTTPLoads</key>
+        <true/>
+        <key>NSThirdPartyExceptionAllowsInsecureHTTPLoads</key>
+        <false/>
     </dict>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>

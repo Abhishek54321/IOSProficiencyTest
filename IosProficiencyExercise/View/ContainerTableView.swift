@@ -133,9 +133,7 @@ extension ContainerTableView:UITableViewDataSource{
         return cell
         
     }
-    /*
-     This method return number of rows  in TableView
-     */
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let count = self.dataModel?.rows?.count{
             return count
@@ -144,9 +142,7 @@ extension ContainerTableView:UITableViewDataSource{
         }
         
     }
-    /*
-     This method return number of Section in TableView
-     */
+   
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
